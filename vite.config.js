@@ -11,6 +11,10 @@ export default defineConfig({
             jsxRuntime: 'automatic',
         }),
     ],
+    // Output built site to `docs/` so GitHub Pages can serve from main branch
+    build: {
+        outDir: 'docs',
+    },
     esbuild: {
         jsx: 'automatic',
     },
