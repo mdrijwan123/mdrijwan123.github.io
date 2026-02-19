@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohammed Rijwan — Senior MLOps Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        html,
+        body {
+            width: 210mm;
+            height: 297mm;
+            overflow: hidden;
+            font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 7.8pt;
+            line-height: 1.35;
+            color: #1a1a2e;
+            background: #fff;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            display: grid;
+            grid-template-columns: 62mm 1fr;
+            overflow: hidden;
+        }
+
+        /* ── SIDEBAR — fill full height ── */
+        .sidebar {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 16px 12px 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .sidebar-content {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .name-block {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 8px;
+        }
+
+        .name {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.1;
+            letter-spacing: -0.3px;
+        }
+
+        .name span {
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .title-line {
+            font-size: 6pt;
+            font-weight: 500;
+            color: #94a3b8;
+            margin-top: 3px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+
+        .s-section {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .s-heading {
+            font-size: 5.8pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #38bdf8;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.25);
+            padding-bottom: 2px;
+            margin-bottom: 1px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 4px;
+            font-size: 6.5pt;
+            color: #cbd5e1;
+            text-decoration: none;
+            line-height: 1.3;
+            word-break: break-all;
+        }
+
+        .contact-item .icon {
+            color: #38bdf8;
+            font-size: 7pt;
+            flex-shrink: 0;
+            font-style: normal;
+        }
+
+        .skill-group {
+            margin-bottom: 3px;
+        }
+
+        .skill-group-name {
+            font-size: 5.8pt;
+            font-weight: 600;
+            color: #94a3b8;
+            margin-bottom: 1px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2px;
+        }
+
+        .skill-tag {
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.22);
+            color: #e2e8f0;
+            font-size: 5.8pt;
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3px;
+        }
+
+        .stat-item {
+            background: rgba(56, 189, 248, 0.07);
+            border-left: 2px solid #38bdf8;
+            padding: 3px 5px;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .stat-num {
+            font-size: 9pt;
+            font-weight: 700;
+            color: #38bdf8;
+            line-height: 1;
+        }
+
+        .stat-lbl {
+            font-size: 5.5pt;
+            color: #94a3b8;
+            margin-top: 1px;
+        }
+
+        .edu-entry {
+            margin-bottom: 4px;
+        }
+
+        .edu-degree {
+            font-size: 6.8pt;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+
+        .edu-school {
+            font-size: 6.2pt;
+            color: #94a3b8;
+        }
+
+        .edu-year {
+            font-size: 5.8pt;
+            color: #64748b;
+        }
+
+        .edu-extra {
+            font-size: 5.5pt;
+            color: #64748b;
+            margin-top: 1px;
+            line-height: 1.25;
+        }
+
+        .cert-item {
+            font-size: 6.2pt;
+            color: #94a3b8;
+            padding-left: 7px;
+            position: relative;
+            margin-bottom: 1.5px;
+            line-height: 1.3;
+        }
+
+        .cert-item::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #38bdf8;
+            font-size: 5.5pt;
+        }
+
+        .cert-item strong {
+            color: #e2e8f0;
+        }
+
+        .sidebar-extra-item {
+            font-size: 6.2pt;
+            color: #94a3b8;
+            padding-left: 7px;
+            position: relative;
+            margin-bottom: 1.5px;
+            line-height: 1.3;
+        }
+
+        .sidebar-extra-item::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #818cf8;
+            font-size: 5.5pt;
+        }
+
+        .sidebar-extra-item strong {
+            color: #e2e8f0;
+        }
+
+        .sidebar-footer {
+            margin-top: auto;
+            padding-top: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+            font-size: 5.5pt;
+            color: #475569;
+            line-height: 1.4;
+        }
+
+        /* ── MAIN — fill full height ── */
+        .main {
+            padding: 16px 16px 14px 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .summary-box {
+            background: linear-gradient(135deg, #eff6ff, #f0fdf4);
+            border-left: 3px solid #3b82f6;
+            padding: 6px 9px;
+            border-radius: 0 5px 5px 0;
+            font-size: 7.2pt;
+            color: #1e3a5f;
+            line-height: 1.45;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .section-heading {
+            font-size: 7pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #0f172a;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 2px;
+        }
+
+        .exp-entry {
+            margin-bottom: 5px;
+        }
+
+        .exp-entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .exp-role {
+            font-size: 7.5pt;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .exp-period {
+            font-size: 6.5pt;
+            color: #64748b;
+            font-weight: 500;
+            white-space: nowrap;
+            margin-left: 6px;
+        }
+
+        .exp-company {
+            font-size: 6.8pt;
+            font-weight: 600;
+            color: #3b82f6;
+            margin-bottom: 1px;
+        }
+
+        .exp-loc {
+            font-size: 5.8pt;
+            color: #94a3b8;
+        }
+
+        .exp-bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            margin-top: 2px;
+        }
+
+        .exp-bullets li {
+            font-size: 6.8pt;
+            color: #374151;
+            padding-left: 8px;
+            position: relative;
+            line-height: 1.38;
+        }
+
+        .exp-bullets li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-size: 5.5pt;
+            top: 1px;
+        }
+
+        .exp-bullets li strong {
+            color: #0f172a;
+        }
+
+        .exp-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2px;
+            margin-top: 2px;
+        }
+
+        .exp-tag {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            color: #475569;
+            font-size: 5.5pt;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-weight: 600;
+        }
+
+        .proj-entry {
+            margin-bottom: 4px;
+        }
+
+        .proj-entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .proj-name {
+            font-size: 7pt;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .proj-meta {
+            font-size: 6pt;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .proj-desc {
+            font-size: 6.5pt;
+            color: #374151;
+            line-height: 1.38;
+            margin-top: 1px;
+        }
+
+        .awards-row {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+
+        .award-chip {
+            background: #fef9c3;
+            border: 1px solid #fde047;
+            color: #713f12;
+            font-size: 5.8pt;
+            padding: 1.5px 5px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        .main-footer {
+            margin-top: auto;
+            padding-top: 6px;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 5.5pt;
+            color: #94a3b8;
+        }
+
+        .main-footer a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Print button — screen only */
+        .print-btn {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            background: #3b82f6;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            box-shadow: 0 4px 16px rgba(59, 130, 246, 0.4);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .print-btn:hover {
+            background: #2563eb;
+        }
+
+        @media print {
+            .print-btn {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="print-btn" onclick="window.print()">⬇ Save as PDF (Ctrl+P)</button>
+
+    <div class="page">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-content">
+
+                <div class="name-block">
+                    <div class="name">Mohammed<br><span>Rijwan</span></div>
+                    <div class="title-line">Senior MLOps Engineer</div>
+                </div>
+
+                <!-- Impact -->
+                <div class="s-section">
+                    <div class="s-heading">Impact</div>
+                    <div class="stat-grid">
+                        <div class="stat-item">
+                            <div class="stat-num">7+</div>
+                            <div class="stat-lbl">Yrs Prod ML</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">100+</div>
+                            <div class="stat-lbl">ML Pipelines</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">350</div>
+                            <div class="stat-lbl">TPS · &lt;150ms</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">40%</div>
+                            <div class="stat-lbl">Cost Saved</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="s-section">
+                    <div class="s-heading">Contact</div>
+                    <a class="contact-item" href="mailto:md1994rijwan@gmail.com"><i
+                            class="icon">✉</i>md1994rijwan@gmail.com</a>
+                    <a class="contact-item" href="tel:+917045226525"><i class="icon">📱</i>+91 7045226525</a>
+                    <div class="contact-item"><i class="icon">📍</i>Gurugram, Haryana, India</div>
+                    <a class="contact-item" href="https://linkedin.com/in/mohammed-rijwan-60074a119"><i
+                            class="icon">in</i>linkedin.com/in/mohammed-rijwan</a>
+                    <a class="contact-item" href="https://github.com/mdrijwan123"><i
+                            class="icon">⌥</i>github.com/mdrijwan123</a>
+                    <a class="contact-item" href="https://youtube.com/thinkwithriz"><i
+                            class="icon">▶</i>youtube.com/thinkwithriz</a>
+                    <a class="contact-item" href="mailto:mdrijwan786@outlook.com"><i
+                            class="icon">✉</i>mdrijwan786@outlook.com</a>
+                </div>
+
+                <!-- Skills -->
+                <div class="s-section">
+                    <div class="s-heading">Core Skills</div>
+                    <div class="skill-group">
+                        <div class="skill-group-name">MLOps & DevOps</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MLflow</span><span class="skill-tag">Kubernetes</span><span
+                                class="skill-tag">Docker</span><span class="skill-tag">CI/CD</span><span
+                                class="skill-tag">Azure DevOps</span><span class="skill-tag">Jenkins</span><span
+                                class="skill-tag">LLMOps</span><span class="skill-tag">Feast</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <div class="skill-group-name">Cloud & Data</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Azure Databricks</span><span class="skill-tag">ADF</span><span
+                                class="skill-tag">ADLS</span><span class="skill-tag">Spark</span><span
+                                class="skill-tag">Hadoop</span><span class="skill-tag">Airflow</span><span
+                                class="skill-tag">Redis</span><span class="skill-tag">Terraform</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <div class="skill-group-name">Programming & ML</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span><span class="skill-tag">PySpark</span><span
+                                class="skill-tag">SQL</span><span class="skill-tag">FastAPI</span><span
+                                class="skill-tag">Flask</span><span class="skill-tag">ONNX</span><span
+                                class="skill-tag">TensorFlow</span><span class="skill-tag">NLP</span><span
+                                class="skill-tag">Scikit-Learn</span><span class="skill-tag">Keras</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <div class="skill-group-name">Monitoring & Observability</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Grafana</span><span class="skill-tag">Prometheus</span><span
+                                class="skill-tag">Data Drift</span><span class="skill-tag">Concept Drift</span><span
+                                class="skill-tag">SLA Monitoring</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="s-section">
+                    <div class="s-heading">Education</div>
+                    <div class="edu-entry">
+                        <div class="edu-degree">B.Tech — Electronics & Communication</div>
+                        <div class="edu-school">Dr. B R Ambedkar NIT, Jalandhar</div>
+                        <div class="edu-year">2014 – 2018 · CGPA 7.07</div>
+                        <div class="edu-extra">Placement Coordinator (70+ companies) · Robotics Society</div>
+                    </div>
+                    <div class="edu-entry">
+                        <div class="edu-degree">12th CBSE — 88%</div>
+                        <div class="edu-school">Kendriya Vidyalaya No.5, Bathinda Cantt</div>
+                        <div class="edu-year">2013 · Head Boy</div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="s-section">
+                    <div class="s-heading">Certifications</div>
+                    <div class="cert-item"><strong>ML in Production</strong> · DeepLearning.AI</div>
+                    <div class="cert-item"><strong>TensorFlow for AI/ML</strong> · DeepLearning.AI</div>
+                    <div class="cert-item"><strong>Neural Networks & DL</strong> · Stanford/Coursera</div>
+                    <div class="cert-item"><strong>Machine Learning</strong> · Stanford/Coursera</div>
+                    <div class="cert-item"><strong>ML A to Z</strong> · Udemy</div>
+                    <div class="cert-item"><strong>Python for Data Science</strong> · LinkedIn</div>
+                </div>
+
+                <!-- Community -->
+                <div class="s-section">
+                    <div class="s-heading">Community & Teaching</div>
+                    <div class="sidebar-extra-item"><strong>Think with Riz</strong> — YouTube channel on ML & AI</div>
+                    <div class="sidebar-extra-item"><strong>Udemy Instructor</strong> — 3,000+ students enrolled in 24h
+                    </div>
+                    <div class="sidebar-extra-item"><strong>4,557+</strong> LinkedIn followers</div>
+                    <div class="sidebar-extra-item"><strong>Kaggle</strong> practitioner — ML competitions</div>
+                </div>
+
+            </div>
+
+            <div class="sidebar-footer">
+                Last updated · Feb 2026
+            </div>
+
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <div class="main-content">
+
+                <!-- Summary -->
+                <div class="summary-box">
+                    <strong>MLOps & DataOps Engineer</strong> with 7+ years building production-grade ML systems at
+                    Fortune 500 scale.
+                    Expert in end-to-end model delivery — from distributed Databricks training to real-time Kubernetes
+                    inference at <strong>350 TPS</strong>.
+                    Led teams of 10, managed 100+ production pipelines, and cut infrastructure costs by up to 40%.
+                    LLMOps practitioner and tech educator whose free ML course drew <strong>3,000+ enrolments in 24
+                        hours</strong>.
+                </div>
+
+                <!-- Experience -->
+                <div class="section">
+                    <div class="section-heading">Experience</div>
+
+                    <div class="exp-entry">
+                        <div class="exp-header">
+                            <div class="exp-role">Senior Engineer — MLOps</div>
+                            <div class="exp-period">Jul 2025 – Present</div>
+                        </div>
+                        <div class="exp-company">Dunnhumby &nbsp;·&nbsp; <span class="exp-loc">Gurugram · On-site</span>
+                        </div>
+                        <ul class="exp-bullets">
+                            <li>Driving MLOps & DevOps capability inception for the Data Science org at a global retail
+                                analytics leader, establishing <strong>ML lifecycle standards</strong> and pipeline
+                                orchestration frameworks.</li>
+                            <li>Partnering with data scientists and platform engineers to design scalable,
+                                enterprise-grade model delivery workflows across the organisation.</li>
+                            <li>Setting up production monitoring infrastructure, automated model retraining, and CI/CD
+                                best practices for ML systems.</li>
+                        </ul>
+                        <div class="exp-tags"><span class="exp-tag">MLOps</span><span class="exp-tag">LLMOps</span><span
+                                class="exp-tag">Azure</span><span class="exp-tag">CI/CD</span><span
+                                class="exp-tag">DataOps</span></div>
+                    </div>
+
+                    <div class="exp-entry">
+                        <div class="exp-header">
+                            <div class="exp-role">Senior MLOps Engineer → MLOps Engineer → Senior Analyst</div>
+                            <div class="exp-period">Jun 2021 – Jul 2025</div>
+                        </div>
+                        <div class="exp-company">Tiger Analytics &nbsp;·&nbsp; <span class="exp-loc">Hyderabad · Remote
+                                · 4 yrs</span></div>
+                        <ul class="exp-bullets">
+                            <li>Managed <strong>100+ production ML & monitoring pipelines</strong> (data + concept
+                                drift) for Fortune 500 retail — fail-safe, fully observable, SLA-compliant.</li>
+                            <li>Built real-time product ranking service with ONNX + Kubernetes + Docker, achieving
+                                <strong>350 TPS at &lt;150ms latency</strong>, cutting deployment cost by
+                                <strong>40%</strong>.</li>
+                            <li>Led MLOps team of <strong>10 engineers</strong> (Agile); operationalised PySpark
+                                propensity models on Databricks with ADF scheduling and full CI/CD — reduced infra cost
+                                by <strong>15%</strong>.</li>
+                            <li>Built embedding-based vector search pipeline, feature store (Feast), and end-to-end ML
+                                drift monitoring infrastructure.</li>
+                            <li>Implemented enterprise-grade model registry, versioning, and automated retraining
+                                triggers using MLflow; standardised MLOps practices across 3 client accounts.</li>
+                        </ul>
+                        <div class="exp-tags"><span class="exp-tag">Kubernetes</span><span
+                                class="exp-tag">ONNX</span><span class="exp-tag">MLflow</span><span
+                                class="exp-tag">Databricks</span><span class="exp-tag">FastAPI</span><span
+                                class="exp-tag">PySpark</span><span class="exp-tag">ADF</span><span
+                                class="exp-tag">Feast</span></div>
+                    </div>
+
+                    <div class="exp-entry">
+                        <div class="exp-header">
+                            <div class="exp-role">Tech Lead → Data/Analytics Engineer → GET</div>
+                            <div class="exp-period">Jul 2018 – Jun 2021</div>
+                        </div>
+                        <div class="exp-company">Jio (Reliance Industries) &nbsp;·&nbsp; <span class="exp-loc">Mumbai ·
+                                On-site · 3 yrs</span></div>
+                        <ul class="exp-bullets">
+                            <li>SPOC for platform data solution — built enterprise data ingestion framework (MySQL, SAP
+                                HANA, PostgreSQL, MongoDB, REST API → Hadoop Data Lake) serving <strong>multiple
+                                    business units</strong>.</li>
+                            <li>Built Python REST APIs (Flask) for unified data distribution; created auto-generated API
+                                endpoints from Hive queries for seamless cross-team data access.</li>
+                            <li>Deployed containerised APIs on Kubernetes via Jenkins + Docker; delivered NLP, speech
+                                processing, and association-rule ML solutions for business stakeholders.</li>
+                            <li>Full-Stack/DevOps rotation: built transformer fault analysis tool, microservices for
+                                automated GitLab integration, and end-to-end data dashboards.</li>
+                        </ul>
+                        <div class="exp-tags"><span class="exp-tag">Python</span><span class="exp-tag">Flask</span><span
+                                class="exp-tag">Spark</span><span class="exp-tag">Hadoop</span><span
+                                class="exp-tag">Airflow</span><span class="exp-tag">Docker</span><span
+                                class="exp-tag">Kubernetes</span><span class="exp-tag">Jenkins</span></div>
+                    </div>
+                </div>
+
+                <!-- Key Projects -->
+                <div class="section">
+                    <div class="section-heading">Key Projects</div>
+
+                    <div class="proj-entry">
+                        <div class="exp-header">
+                            <div class="proj-name">Real-Time ML Product Ranking Service</div>
+                            <div class="proj-meta">Tiger Analytics</div>
+                        </div>
+                        <div class="proj-desc">End-to-end real-time model serving: ONNX packaging → Docker
+                            containerisation → Kubernetes deployment with horizontal/vertical auto-scaling. Achieved
+                            <strong>350 TPS at &lt;150ms p99 latency</strong> with <strong>40% cost reduction</strong>
+                            vs. previous architecture.</div>
+                    </div>
+
+                    <div class="proj-entry">
+                        <div class="exp-header">
+                            <div class="proj-name">Production Model Monitoring Platform (100+ Models)</div>
+                            <div class="proj-meta">Tiger Analytics · Fortune 500</div>
+                        </div>
+                        <div class="proj-desc">Enterprise monitoring platform tracking data drift, concept drift, and
+                            performance degradation across 100+ production models. Automated alerting and retraining
+                            triggers with full observability dashboards.</div>
+                    </div>
+
+                    <div class="proj-entry">
+                        <div class="exp-header">
+                            <div class="proj-name">Batch MLOps Pipeline — Propensity Model</div>
+                            <div class="proj-meta">Tiger Analytics</div>
+                        </div>
+                        <div class="proj-desc">PySpark propensity model on Azure Databricks with ADF scheduling, full
+                            CI/CD via Azure DevOps, and automated drift monitoring. Achieved <strong>15% infrastructure
+                                cost savings</strong> through Spark optimisation.</div>
+                    </div>
+
+                    <div class="proj-entry">
+                        <div class="exp-header">
+                            <div class="proj-name">API as a Data Source & Distribution Framework</div>
+                            <div class="proj-meta">Jio / Reliance Industries</div>
+                        </div>
+                        <div class="proj-desc">Platform to ingest data from REST APIs (Basic, Token, Dynamic, NTLM auth)
+                            into Hadoop. Companion framework auto-generated Flask API endpoints from Hive for seamless
+                            data distribution across business units.</div>
+                    </div>
+                </div>
+
+                <!-- Recognition -->
+                <div class="section">
+                    <div class="section-heading">Recognition & Awards</div>
+                    <div class="awards-row">
+                        <span class="award-chip">🏆 TechGig Python Rank #217 / 66,818 · 99.68%ile</span>
+                        <span class="award-chip">🥇 Robotics Gold · UIET Chandigarh</span>
+                        <span class="award-chip">🥇 Robotics Gold · DAVIET Jalandhar</span>
+                        <span class="award-chip">🎓 3,000+ Udemy enrolments in 24 hrs</span>
+                        <span class="award-chip">🏅 TechGig Coding Semifinals · 150K+ participants</span>
+                        <span class="award-chip">📊 Head Boy — KV Bathinda Cantt</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="main-footer">
+                <span>Portfolio: <a href="https://mdrijwan123.github.io">mdrijwan123.github.io</a></span>
+                <span>References available upon request</span>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+
+</html>
