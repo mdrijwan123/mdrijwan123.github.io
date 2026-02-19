@@ -1,0 +1,155 @@
+.timeline {
+    position: relative;
+    padding-left: 40px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--cyan), var(--purple), var(--pink));
+    border-radius: 2px;
+    opacity: 0.3;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 32px;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -40px;
+    top: 24px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    border: 2px solid var(--accent, var(--cyan));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    box-shadow: 0 0 16px rgba(0, 212, 255, 0.2);
+    z-index: 2;
+    transition: var(--transition);
+}
+
+.timeline-item.current .timeline-dot {
+    animation: pulse-glow 2s ease-in-out infinite;
+    border-color: var(--cyan);
+}
+
+.timeline-card {
+    padding: 24px 28px;
+    border-left: 3px solid var(--accent, var(--cyan));
+    transition: var(--transition);
+}
+
+.timeline-item.current .timeline-card {
+    border-left-color: var(--cyan);
+    background: rgba(0, 212, 255, 0.04);
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.exp-role {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.exp-company {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--accent, var(--cyan));
+}
+
+.current-badge {
+    padding: 4px 12px;
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid var(--cyan);
+    border-radius: 50px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--cyan);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.exp-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.exp-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.exp-points {
+    list-style: none;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.exp-points li {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    padding-left: 16px;
+    position: relative;
+}
+
+.exp-points li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent, var(--cyan));
+    font-size: 0.75rem;
+}
+
+.exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+@media (max-width: 640px) {
+    .timeline {
+        padding-left: 28px;
+    }
+
+    .timeline::before {
+        left: 8px;
+    }
+
+    .timeline-dot {
+        left: -28px;
+        width: 22px;
+        height: 22px;
+        font-size: 0.65rem;
+    }
+
+    .timeline-card {
+        padding: 18px 20px;
+    }
+}
